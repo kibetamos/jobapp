@@ -119,10 +119,10 @@ public class applicant {
             return "home";
         } 
     }
-    return "signup";
-    }
+    return "sign up";
     
-    public void saveapplicant() throws SQLException{
+ }
+        public String saveapplicant() throws SQLException{
           Statement s = null;
          //creates an instance of the DBConnect class
          
@@ -136,12 +136,15 @@ public class applicant {
                             + "VALUES ('" + getFname() + "','"
                             + getLname() + "','"
                             + getGender()+ "'" + ",'"
+                            
+                            + getAddress()+ "','"
                             + getEmail()+ "','"
                             + jk.encryptPassword(getCPassword())+ "','"
                             + getAge()+ "') ";
                     s.execute(sql);
                     clear();
-     }}
-    
+                    
+     }
+    return "signup";}
     
 }

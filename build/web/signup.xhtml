@@ -1,71 +1,56 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-     
-    <head>
-        <title>Sign up</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <h:body>
-        <h:form>
-        <div>
-            <center><h3>Register</h3></center>
-            <br/>
-            
-            <h:outputLabel>First name: </h:outputLabel>
-            <h:inputText id ="fname" value="#{applicantObj.fname}"/>
-                         <br/>
-                         <br/>
-                         <br/>
-                   <h:outputLabel>Last Name: </h:outputLabel>
-                   <h:inputText id ="lname" value="#{applicantObj.lname}"/>   
-            <br/>
-            <br/>
-            <br/>
-               <h:outputLabel>Age</h:outputLabel>
-               <h:inputText id="age" value="#{applicantObj.age}"/>
-            <br/>
-            <br/>
-              <h:outputLabel>Gender: </h:outputLabel>
-              
-              <br/><br/>
-              <h:outputLabel>Male</h:outputLabel>
-              <input type="radio" name="Gender" value=" Male"/>
-               <h:outputLabel>Female</h:outputLabel>
-               <input type="radio" name="Gender" value=" female"/>
-               <br/>
-               <br/>
-            
-            <h:outputLabel>Address</h:outputLabel>
-            <h:inputText id="address" value="#{applicantObj.address}"/>
-            <br/>
-            <br/>
-            <h:outputLabel>Email:</h:outputLabel>
-            <h:inputText id="email" value="#{applicantObj.email}"/>
-             <br/>
-            <br/>
-            <h:outputLabel>Password:</h:outputLabel>
-            <h:inputText id="pword" value="#{applicantObj.password}"/>
-             <br/>
-            <br/>
-            <h:outputLabel>Confirm password:</h:outputLabel>
-            <h:inputText id="cpword" value="#{applicantObj.CPassword}"/>
-            <center><h:commandButton id="register" value="REGISTER" action="#{applicantObj.saveapplicant()}"> </h:commandButton>
-             <br/>
-            <br/>
-            <br/>
-            <h:button id="back" value="BACK" outcome="welcome.xhtml"></h:button>
-            </center>
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-                         
-            
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>SIGN UP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>
+            <center><h1>SIGN UP</h1></center>
+            <hr/><br/>
+            <h:form>
+            <h:outputLabel>First Name: </h:outputLabel>
+            <h:inputText id="txtfname" value="#{applicantObj.fname}" validatorMessage="First name is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Last Name: </h:outputLabel>
+            <h:inputText id="txtlname" value="#{applicantObj.lname}" validatorMessage="Last name is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Age: </h:outputLabel>
+            <h:inputText id="txtage" value="#{applicantObj.age}" validatorMessage="Age is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Gender: </h:outputLabel>
+            <div class="col-sm-4">
+                <h:selectOneRadio value="#{applicantObj.gender}">
+            <f:selectItem itemValue="M" itemLabel="Male" /><f:selectItem itemValue="F" itemLabel="Female" />
+            </h:selectOneRadio>
+                </div>
+            <br/>
+
+            <h:outputLabel>Address: </h:outputLabel>
+            <h:inputText id="txtaddress" value="#{applicantObj.address}" validatorMessage="Address is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Email: </h:outputLabel>
+            <h:inputText id="txtemail" value="#{applicantObj.email}" validatorMessage="Email is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Password: </h:outputLabel>
+            <h:inputSecret id="txtpwd" value="#{applicantObj.password}" validatorMessage="Password is required..">
+                <f:validateRequired/></h:inputSecret>
+            <br/><br/>
+            <h:outputLabel>Confirm Password: </h:outputLabel>
+            <h:inputSecret id="txtcpwd" value="#{applicantObj.CPassword}" validatorMessage="Please Confirm Password..">
+                <f:validateRequired/></h:inputSecret>
+            <br/>
+            <h:commandButton value="Save" action="#{applicantObj.saveapplicant()}" class="btn btn-success btnWidth" />
+            </h:form>
         </div>
-        </h:form> 
     </h:body>
 </html>
