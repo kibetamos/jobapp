@@ -31,32 +31,33 @@ public final class Admin implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public static Map<String,String> user_details;
+	public static Map<String,String>  applicant_details;
         
         
 	
-	private String user; //default value 
+	private String applicant; //default value 
+    private Map<String, String> applicant_detail;
 	
 	
 
-	public void userChanged(ValueChangeEvent e){
+	public void applicantChanged(ValueChangeEvent e){
 		//assign new value to localeCode
-		user= e.getNewValue().toString();
+		applicant= e.getNewValue().toString();
 		
 	}
 
 	public Map<String,String> getUserInMap() {
             get_user_list();
-		return this.user_details;
+		return this.applicant_details;
                
 	}
 
-	public String getUser() {
-		return user;
+	public String getappplicant() {
+		return applicant;
 	}
 
 	public void setUser(String user) {
-		this.user = user;
+		this.applicant = user;
 	}
 
     public String getAge() {
@@ -64,7 +65,7 @@ public final class Admin implements Serializable{
     }
 
     public void setAge(String age) {
-        String[] token = user.split(";");
+        String[] token = applicant.split(";");
         this.age = token[6];
     }
 
@@ -73,7 +74,7 @@ public final class Admin implements Serializable{
     }
 
     public void setFname(String fname) {
-         String[] token = user.split(";");
+         String[] token = applicant.split(";");
         this.fname = token[1];
     }
 
@@ -82,7 +83,7 @@ public final class Admin implements Serializable{
     }
 
     public void setLname(String lname) {
-         String[] token = user.split(";");
+         String[] token = applicant.split(";");
         this.lname = token[2];
     }
 
@@ -91,7 +92,7 @@ public final class Admin implements Serializable{
     }
 
     public void setGender(String gender) {
-         String[] token = user.split(";");
+         String[] token = applicant.split(";");
         this.gender = token[3];
     }
 
@@ -100,7 +101,7 @@ public final class Admin implements Serializable{
     }
 
     public void setPhone(String phone) {
-         String[] token = user.split(";");
+         String[] token = applicant.split(";");
         this.phone = token[4];
     }
 
@@ -109,7 +110,7 @@ public final class Admin implements Serializable{
     }
 
     public void setEmail(String email) {
-         String[] token = user.split(";");
+         String[] token = applicant.split(";");
         this.email = token[5];
     }
 
@@ -118,7 +119,7 @@ public final class Admin implements Serializable{
     }
 
     public void setAddress(String address) {
-         String[] token = user.split(";");
+         String[] token = applicant.split(";");
         this.address = token[7];
     }
 
@@ -127,7 +128,7 @@ public final class Admin implements Serializable{
     }
 
     public void setId(int id) {
-        String[] token = user.split(";");
+        String[] token = applicant.split(";");
         this.id = Integer.valueOf(token[0]);
     }
     
@@ -149,7 +150,7 @@ public final class Admin implements Serializable{
  	 	while(rs.next()){
               
 		
-		user_details.put(rs.getString("fname")+" "+rs.getString("lname"), (rs.getString("id")
+		applicant_details.put(rs.getString("fname")+" "+rs.getString("lname"), (rs.getString("id")
                         +";"+rs.getString("fname")+";"+rs.getString("lname")+";"+rs.getString("gender")
                         +";"+rs.getString("phone")
                         +";"+rs.getString("email")

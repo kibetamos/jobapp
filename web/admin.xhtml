@@ -14,15 +14,15 @@
         <div class="mybox">
 		<h:form>
                     
-		  <h:inputHidden id="country" value="#{AdminObj.user}"  />
+		  <h:inputHidden id="country" value="#{AdminObj.applicant}"  />
                   
 					
                                 <center>
                                     <h5><u>Registered Users</u></h5> 
-				<h:selectOneMenu value="#{AdminObj.user}" onchange="submit()"
+				<h:selectOneMenu value="#{AdminObj.applicant}" onchange="submit()"
                                                  valueChangeListener="#{AdminObj.userChanged}" 
                                                  style="width: 200px;">
-                                    <f:selectItems value="#{AdminObj.userInMap}" />
+                                    <f:selectItems value="#{AdminObj.applicantInMap}" />
    				</h:selectOneMenu>
                                 </center>
                                 <br/>
