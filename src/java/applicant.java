@@ -95,14 +95,14 @@ public class applicant {
 
     
     public void clear(){
-        setAddress(null);
-        setAge(0);
-        setCPassword(null);
-        setEmail(null);
         setFname(null);
+         setLname(null);
+        setAge(0);
         setGender(null);
-        setLname(null);
+        setAddress(null);
+        setEmail(null);
         setPassword(null);
+        setCPassword(null);
     }
     
  public String login() throws SQLException{
@@ -129,8 +129,8 @@ public class applicant {
          if(myCon!=null){
          System.out.println(myCon);
          s = myCon.createStatement();
-         
-                    String sql = "INSERT INTO applicant "
+        
+ String sql = "INSERT INTO applicant "
                             + "(fname,lname,age,gender,address,"
                             + "email,password,Cpassword) "
                             + "VALUES ('" + getFname() + "','"
