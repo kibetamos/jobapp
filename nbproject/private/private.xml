@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/jobapplication/jobapp/src/java/DBConnect.java</file>
+            <file>file:/E:/jobapplication/jobapp/src/java/Admin.java</file>
             <file>file:/E:/jobapplication/jobapp/web/signup.xhtml</file>
             <file>file:/E:/jobapplication/jobapp/src/java/applicant.java</file>
+            <file>file:/E:/jobapplication/jobapp/web/admin.xhtml</file>
         </group>
     </open-files>
 </project-private>

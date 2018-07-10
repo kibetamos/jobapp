@@ -11,7 +11,7 @@ import javax.faces.bean.RequestScoped;
 public class applicant {
     String fname;
     String lname;
-    int age;
+    String age;
     String gender;
      String address;
     String email;
@@ -45,11 +45,11 @@ public class applicant {
         this.lname = lname;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -146,5 +146,9 @@ public class applicant {
                     
      }
     return "signup";}
+
+    private void setAge(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

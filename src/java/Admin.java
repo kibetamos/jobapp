@@ -21,10 +21,10 @@ public final class Admin implements Serializable{
     String fname;
     String lname;
     String gender;
-    String phone;
+    String  phone;
     String email;
     String address;
-    int id;
+    String id;
 
     
     
@@ -78,8 +78,8 @@ public final class Admin implements Serializable{
         this.fname = token[1];
     }
 
-    public String getLname() {
-        return lname;
+    public String getLname() {    
+            return lname;
     }
 
     public void setLname(String lname) {
@@ -102,7 +102,7 @@ public final class Admin implements Serializable{
 
     public void setPhone(String phone) {
          String[] token = applicant.split(";");
-        this.phone = token[4];
+        this.phone=token[4];
     }
 
     public String getEmail() {
@@ -123,13 +123,13 @@ public final class Admin implements Serializable{
         this.address = token[7];
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     public void setId(int id) {
         String[] token = applicant.split(";");
-        this.id = Integer.valueOf(token[0]);
+        this.id = String.valueOf(token[0]);
     }
     
     
@@ -141,7 +141,7 @@ public final class Admin implements Serializable{
  	try {
  	 	Connection connection=null;
  	 	connection=myCon;
-                user_details = new LinkedHashMap<>();
+                applicant_details = new LinkedHashMap<>();
  	 	Statement ps=connection.createStatement();
                 
  	 	String sql="select distinct * from user order by fname asc";

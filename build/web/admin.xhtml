@@ -9,20 +9,20 @@
     <link href="./resources/css/mycss.css" rel="stylesheet" type="text/css"/>
     <h:body>
     	
-        <h1><center>Admin Panel</center></h1>
+        <h1><center> Admin Panel</center></h1>
         <hr/>
         <div class="mybox">
 		<h:form>
                     
-		  <h:inputHidden id="country" value="#{AdminObj.applicant}"  />
+		  <h:inputHidden id="country" value="#{ApplicantObj.applicant}"  />
                   
 					
                                 <center>
                                     <h5><u>Registered Users</u></h5> 
 				<h:selectOneMenu value="#{AdminObj.applicant}" onchange="submit()"
-                                                 valueChangeListener="#{AdminObj.userChanged}" 
+                                                 valueChangeListener="#{AdminObj.applicantChanged}" 
                                                  style="width: 200px;">
-                                    <f:selectItems value="#{AdminObj.applicantInMap}" />
+                                    <f:selectItems value="#{appplicantObj.applicantInMap}" />
    				</h:selectOneMenu>
                                 </center>
                                 <br/>
