@@ -11,7 +11,7 @@ import javax.faces.bean.RequestScoped;
 public class applicant {
     String fname;
     String lname;
-    String age;
+    int age;
     String gender;
      String address;
     String email;
@@ -45,12 +45,12 @@ public class applicant {
         this.lname = lname;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setAge(int age) {
+        this.age =  age;
     }
 
     public String getGender() {
@@ -119,7 +119,7 @@ public class applicant {
             return "home";
         } 
     }
-    return "sign up";
+    return "login.xhtml";
     
  }
         public String saveapplicant() throws SQLException{
@@ -131,24 +131,19 @@ public class applicant {
          s = myCon.createStatement();
         
  String sql = "INSERT INTO applicant "
-                            + "(fname,lname,age,gender,address,"
-                            + "email,password,Cpassword) "
+                            + "(fname,lname,gender,address,"
+                            + "email,password,Cpassword,age) "
                             + "VALUES ('" + getFname() + "','"
                             + getLname() + "','"
                             + getGender()+ "'" + ",'"
-                            
                             + getAddress()+ "','"
                             + getEmail()+ "','"
                             + jk.encryptPassword(getCPassword())+ "','"
                             + getAge()+ "') ";
                     s.execute(sql);
                     clear();
-                    
      }
-    return "signup";}
-
-    private void setAge(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+    return "login.xhtml";
+        }
 }
+    

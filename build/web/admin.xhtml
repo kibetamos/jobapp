@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  
     <link href="./resources/css/mycss.css" rel="stylesheet" type="text/css"/>
     <h:body>
     	
@@ -18,12 +18,7 @@
                   
 					
                                 <center>
-                                    <h5><u>Registered Users</u></h5> 
-				<h:selectOneMenu value="#{AdminObj.applicant}" onchange="submit()"
-                                                 valueChangeListener="#{AdminObj.applicantChanged}" 
-                                                 style="width: 200px;">
-                                    <f:selectItems value="#{appplicantObj.applicantInMap}" />
-   				</h:selectOneMenu>
+                               
                                 </center>
                                 <br/>
                                 <hr/>
