@@ -3,10 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:f="http://java.sun.com/jsf/core">
+
   
     <link href="./resources/css/mycss.css" rel="stylesheet" type="text/css"/>
+
+
     <h:body>
     	
         <h1><center> Admin Panel</center></h1>
@@ -26,26 +28,19 @@
                                 <h:panelGrid id = "panel" columns = "2" 
                                              cellpadding = "10" cellspacing = "1" style="letter-spacing: 25%; margin-left: 30%">
                                 
-                                FirstName<h:inputText id="fname" value="#{AdminObj.fname}" size="20" />
-                                <br/>
-                                LastName<h:inputText id="lname" value="#{AdminObj.lname}" size="20" />
-                                <br/>
-                                Gender<h:inputText id="gender" value="#{AdminObj.gender}" size="20" />
-                                <br/>
-                                Phone<h:inputText id="phone" value="#{AdminObj.phone}" size="20" />
+                                UsertName<h:inputText id="fname" value="#{AdminObj.fname}" size="20" />
                                 <br/>
                                 Email<h:inputText id="email" value="#{AdminObj.email}" size="20" />
                                 <br/>
-                                Address<h:inputText id="address" value="#{AdminObj.address}" size="20" />
+                                Password<h:inputText id="address" value="#{AdminObj.address}" size="20" />
                                 <br/>
-                                Age:<h:inputText id="age" value="#{AdminObj.age}" size="20" />
    				
                     </h:panelGrid>
                                 
 			<hr/>
-                        <center> <h:commandButton id="edit" value="UPDATE" action="#{AdminObj.Edit()}"/>
+                        <center> <h:commandButton id="edit" value="LOGIN" action="#{AdminObj.Edit()}"/>
                         &nbsp;&nbsp;
-                        <h:commandButton id="delete" value="REMOVE" action="#{AdminObj.Delete()}"/>
+                        <h:commandButton id="delete" value="BACK" action="#{AdminObj.Delete()}"/>
                         </center>
 		</h:form>
         </div>
