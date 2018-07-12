@@ -6,9 +6,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 
-@ManagedBean(name = "applicantObj")
+@ManagedBean(name = "signupObj")
 @RequestScoped
-public class applicant {
+public class signup {
     String fname;
     String lname;
     int age;
@@ -110,7 +110,7 @@ public class applicant {
 
     Statement statement = myCon.createStatement();
     
-    String SQL = "SELECT email, password FROM applicant WHERE email = '" + getEmail()
+    String SQL = "SELECT email, password FROM signup WHERE email = '" + getEmail()
             + "' AND password = '" + jk.encryptPassword(getPassword()) + "';";
 
     ResultSet resultSet = statement.executeQuery(SQL);
@@ -130,7 +130,7 @@ public class applicant {
          System.out.println(myCon);
          s = myCon.createStatement();
         
- String sql = "INSERT INTO applicant "
+ String sql = "INSERT INTO signup "
                             + "(fname,lname,gender,address,"
                             + "email,password,Cpassword,age) "
                             + "VALUES ('" + getFname() + "','"
