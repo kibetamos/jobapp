@@ -24,7 +24,7 @@ public class signup {
     Connection myCon = db.myConnect(); //db connection instance
     HasherSha1 jk = new HasherSha1(); //hashing class instance
     
-    public applicant(){
+    public signup(){
         
     
 }
@@ -132,7 +132,7 @@ public class signup {
         
  String sql = "INSERT INTO signup "
                             + "(fname,lname,gender,address,"
-                            + "email,password,Cpassword,age) "
+                            + "email,password,age,application) "
                             + "VALUES ('" + getFname() + "','"
                             + getLname() + "','"
                             + getGender()+ "'" + ",'"

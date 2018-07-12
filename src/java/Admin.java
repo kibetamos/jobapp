@@ -161,15 +161,5 @@ public final class Admin implements Serializable{
                 
  	} catch (SQLException e) {
  	 	 System.out.println(e);
- 	}
+ 	}}}
  	
- 	}
-        public String Edit(){
-            return "Admin";
-        }
-        public String Delete(){
-            return "Admin";
-        }
-
-
-}

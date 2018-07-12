@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <link href="./resources/css/mycss.css" rel="stylesheet" type="text/css"/> 
+    <h:head>
+        <title>SIGN UP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div>
+            <center><h1>SIGN UP</h1></center>
+            <hr/><br/>
+            <h:form>
+            <h:outputLabel>First Name: </h:outputLabel>
+            <h:inputText id="txtfname" value="#{signupObj.fname}" validatorMessage="First name is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Last Name: </h:outputLabel>
+            <h:inputText id="txtlname" value="#{signupObj.lname}" validatorMessage="Last name is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Age: </h:outputLabel>
+            <h:inputText id="txtage" value="#{signupObj.age}" validatorMessage="Age is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Gender: </h:outputLabel>
+            <div class="col-sm-4">
+                <h:selectOneRadio value="#{signupObj.gender}">
+            <f:selectItem itemValue="M" itemLabel="Male" /><f:selectItem itemValue="F" itemLabel="Female" />
+            </h:selectOneRadio>
+                </div>
+            <br/>
+
+            <h:outputLabel>Address: </h:outputLabel>
+            <h:inputText id="txtaddress" value="#{signupObj.address}" validatorMessage="Address is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Email: </h:outputLabel>
+            <h:inputText id="txtemail" value="#{signupObj.email}" validatorMessage="Email is required..">
+                <f:validateRequired/></h:inputText>
+            <br/><br/>
+            <h:outputLabel>Password: </h:outputLabel>
+            <h:inputSecret id="txtpwd" value="#{signupObj.password}" validatorMessage="Password is required..">
+                <f:validateRequired/></h:inputSecret>
+            <br/><br/>
+            <h:outputLabel>Confirm Password: </h:outputLabel>
+            <h:inputSecret id="txtcpwd" value="#{signupObj.CPassword}" validatorMessage="Please Confirm Password..">
+                <f:validateRequired/></h:inputSecret>
+            <br/>
+            <h:commandButton value="Save" action="#{signupObj.saveapplicant()}" class="btn btn-success btnWidth" />
+            </h:form>
+        </div>
+    </h:body>
+</html>
