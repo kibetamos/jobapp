@@ -17,14 +17,13 @@ and open the template in the editor.
         <p>You can change tour password now  below and get started once again</p>
         
         <h:form>
-            <h:outputLabel>New Password</h:outputLabel>
-            <h:inputText id="newpassword" value=""/>
-            <br/>
-            <br/>
-            <br/>
-            
-            <h:outputLabel>Re-enter password</h:outputLabel>
-            <h:inputText id="reenterpassword" value=""/>
+           <h:outputLabel>Password: </h:outputLabel>
+            <h:inputSecret id="txtpwd" value="#{signupObj.password}" validatorMessage="Password is required..">
+                </h:inputSecret>
+            <br/><br/>
+            <h:outputLabel>Confirm Password: </h:outputLabel>
+            <h:inputSecret id="txtcpwd" value="#{signupObj.CPassword}" validatorMessage="Please Confirm Password..">
+                </h:inputSecret>
             <br/>
             <br/>
             <br/>
