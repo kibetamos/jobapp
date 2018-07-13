@@ -132,7 +132,7 @@ public class signup {
         
  String sql = "INSERT INTO signup "
                             + "(fname,lname,gender,address,"
-                            + "email,password,age,application) "
+                            + "email,password,age) "
                             + "VALUES ('" + getFname() + "','"
                             + getLname() + "','"
                             + getGender()+ "'" + ",'"
